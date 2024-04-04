@@ -4,6 +4,6 @@ import { defineConfig } from "vitest/config";
 export default defineConfig({
   test: {
     globals: true, // VitestのグローバルAPIを有効にする
-    environment: "node", // テスト環境
+    environment: "happy-dom", // テスト環境
   },
 });
