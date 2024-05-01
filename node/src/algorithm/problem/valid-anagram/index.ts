@@ -1,4 +1,4 @@
-// ハッシュテーブルを使う方法
+// ハッシュテーブルを使わない方法
 // O(n^2)
 export function XXX2(s: string, t: string) {
   if (s.length !== t.length) return false;
@@ -16,7 +16,7 @@ export function XXX2(s: string, t: string) {
   return true;
 }
 
-// ハッシュテーブルを使わない方法
+// ハッシュテーブルを使う方法
 // O(n)
 export function XXX(s: string, t: string) {
   if (s.length !== t.length) return false;
