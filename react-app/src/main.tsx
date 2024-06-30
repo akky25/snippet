@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Component } from "./snippets/Tmp";
+// import { Component } from "./snippets/Tmp";
+import { default as Component } from "./snippets/Tmp/Form";
+// import { Form1, Form2 } from "./snippets/Tmp/Form2";
 // import Component from "./snippets/TemperatureConverter";
 // import { Component } from "./snippets/Tmp";
 // import Component from "./snippets/ContactForm/index.tsx";
@@ -21,6 +23,8 @@ async function enableMocking() {
 enableMocking().then(() => {
   ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
+      {/* <Form1 /> */}
+      {/* <Form2 /> */}
       <Component />
     </React.StrictMode>
   );
