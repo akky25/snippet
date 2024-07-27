@@ -28,6 +28,11 @@ header {
   height: 60px;
 }
 
+.div {
+  display: flex;
+  flex-grow: 1;
+}
+
 nav {
   background-color: coral;
   width: 100px;
@@ -46,9 +51,4 @@ aside {
 footer {
   background-color: slategray;
   height: 100px;
-}
-
-.div {
-  display: flex;
-  flex-grow: 1;
 }

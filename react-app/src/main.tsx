@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 // import { Component } from "./snippets/Tmp";
-import { default as Component } from "./snippets/Tmp/Form";
+// import { default as Component } from "./snippets/Tmp/Form";
 // import { Form1, Form2 } from "./snippets/Tmp/Form2";
 // import Component from "./snippets/TemperatureConverter";
 // import { Component } from "./snippets/Tmp";
 // import Component from "./snippets/ContactForm/index.tsx";
-// import Component from "./snippets/HolyGrail";
+import Component from "./snippets/layout/HolyGrail";
 // import Component from "./snippets/ToDo";
 async function enableMocking() {
   if (process.env.NODE_ENV !== "development") {
