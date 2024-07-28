@@ -1,11 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Component from ".";
+import { createMeta } from "../utils";
 
 const meta = {
-  component: Component,
-  parameters: {
-    layout: "fullscreen",
-  },
+  ...createMeta(Component),
 } satisfies Meta<typeof Component>;
 export default meta;
 

@@ -1,0 +1,43 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  header,
+  nav,
+  main,
+  aside,
+  footer {
+    padding: 12px;
+  }
+
+  header {
+    background-color: tomato;
+    height: 60px;
+  }
+
+  .div {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  nav {
+    background-color: coral;
+    width: 100px;
+  }
+
+  main {
+    background-color: moccasin;
+    flex: 1;
+  }
+
+  aside {
+    background-color: sandybrown;
+    width: 100px;
+  }
+
+  footer {
+    background-color: slategray;
+    height: 100px;
+  }
+}

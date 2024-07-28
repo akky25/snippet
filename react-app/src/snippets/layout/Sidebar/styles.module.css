@@ -1,0 +1,13 @@
+.root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(100px, 25%) 1fr;
+
+  nav {
+    border: 5px dotted goldenrod;
+  }
+
+  main {
+    border: 5px dotted seagreen;
+  }
+}
