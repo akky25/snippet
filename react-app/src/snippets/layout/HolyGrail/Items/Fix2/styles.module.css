@@ -1,0 +1,66 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  header,
+  nav,
+  main,
+  aside,
+  footer {
+    padding: 12px;
+  }
+
+  header {
+    background-color: tomato;
+    height: 60px;
+  }
+
+  .div {
+    display: flex;
+    flex-grow: 1;
+
+    * {
+      overflow-wrap: break-word;
+    }
+  }
+
+  nav {
+    background-color: coral;
+    width: 200px;
+  }
+
+  main {
+    background-color: moccasin;
+    flex: 1;
+  }
+
+  aside {
+    background-color: sandybrown;
+  }
+
+  footer {
+    background-color: slategray;
+  }
+
+  main,
+  nav,
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 1rem;
+  }
+
+  div:not(.div) {
+    width: 40px;
+    aspect-ratio: 1/1;
+    border: 1px solid black;
+  }
+
+  aside > div {
+    width: 200px !important;
+    height: 40px !important;
+    margin-top: 1rem;
+  }
+}

@@ -1,4 +1,9 @@
 import styles from "./styles.module.css";
+
+/**
+ * ヘッダーやフッター、サイドバーがコンテンツに依存
+ * @returns
+ */
 function Component() {
   return (
     <div className={styles.root}>

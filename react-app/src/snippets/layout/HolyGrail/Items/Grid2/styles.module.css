@@ -1,0 +1,62 @@
+.root {
+  min-height: 100vh;
+
+  display: grid;
+  grid-template: auto 1fr auto / auto 1fr auto;
+
+  header,
+  nav,
+  main,
+  aside,
+  footer {
+    padding: 12px;
+  }
+
+  header {
+    background-color: tomato;
+    grid-column: 1 / 4;
+    height: 60px;
+  }
+
+  nav {
+    background-color: coral;
+    grid-column: 1 / 2;
+    width: 130px;
+  }
+
+  main {
+    background-color: moccasin;
+    grid-column: 2 / 3;
+  }
+
+  aside {
+    background-color: sandybrown;
+    grid-column: 3 / 4;
+  }
+
+  footer {
+    background-color: slategray;
+    grid-column: 1 / 4;
+  }
+
+  main,
+  nav,
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 1rem;
+  }
+
+  div:not(.div) {
+    width: 40px;
+    aspect-ratio: 1/1;
+    border: 1px solid black;
+  }
+
+  aside > div {
+    width: 200px !important;
+    height: 40px !important;
+    margin-top: 1rem;
+  }
+}
