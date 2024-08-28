@@ -8,19 +8,81 @@
   </head>
   <body>
     <div id="app">
-      <a href="https://vitejs.dev" target="_blank">
-        <img src="/typescript.svg" class="logo" alt="Vite logo" />
-      </a>
-      <a href="https://www.typescriptlang.org/" target="_blank">
-        <img src="/vite.svg" class="logo vanilla" alt="TypeScript logo" />
-      </a>
-      <h1>Vite + TypeScript</h1>
-      <div class="card">
-        <button id="counter" type="button"></button>
-      </div>
-      <p class="read-the-docs">
-        Click on the Vite and TypeScript logos to learn more
-      </p>
+      <form class="form">
+        <!-- 入力 -->
+        <span class="input-span">
+          <label for="text" class="label">テキスト</label>
+          <input type="text" id="text" placeholder="テキスト" />
+        </span>
+        <span class="input-span">
+          <label for="password" class="label">パスワード</label>
+          <input type="password" id="password" placeholder="パスワード" />
+        </span>
+        <span class="input-span">
+          <label for="email" class="label">メール</label>
+          <input type="email" id="email" placeholder="メール" />
+        </span>
+        <span class="input-span">
+          <label for="number" class="label">数字</label>
+          <input type="number" id="number" placeholder="数字" />
+        </span>
+        <span class="input-span">
+          <label for="tel" class="label">電話番号</label>
+          <input type="tel" id="tel" placeholder="電話番号" />
+        </span>
+        <span class="input-span">
+          <label for="url" class="label">URL</label>
+          <input type="url" id="url" placeholder="URL" />
+        </span>
+        <span class="input-span">
+          <label for="search" class="label">検索</label>
+          <input type="search" id="search" placeholder="検索" />
+        </span>
+
+        <span class="input-span">
+          <label for="date" class="label">日付</label>
+          <input type="text" id="date" placeholder="日付" />
+        </span>
+        <span class="input-span">
+          <label for="time" class="label">時間</label>
+          <input type="time" id="time" />
+        </span>
+        <span class="input-span">
+          <label for="datetime-local" class="label">日時</label>
+          <input type="datetime-local" id="datetime-local" />
+        </span>
+        <span class="input-span">
+          <label for="month" class="label">月</label>
+          <input type="month" id="month" />
+        </span>
+        <span class="input-span">
+          <label for="week" class="label">週</label>
+          <input type="week" id="week" />
+        </span>
+        <span class="input-span">
+          <label for="color" class="label">色</label>
+          <input type="color" id="color" />
+        </span>
+        <span class="input-span">
+          <label for="file" class="label">ファイル</label>
+          <input type="file" id="file" />
+        </span>
+        <span class="input-span">
+          <label for="checkbox" class="label">チェックボックス</label>
+          <input type="checkbox" id="checkbox" />
+        </span>
+        <span class="input-span">
+          <label for="radio" class="label">ラジオボタン</label>
+          <input type="radio" id="radio" />
+        </span>
+        <span class="input-span">
+          <label for="range" class="label">範囲</label>
+          <input type="range" id="range" />
+        </span>
+        <input class="submit" type="submit" value="送信" />
+        <input class="submit" type="reset" value="リセット" />
+        <input class="submit" type="button" value="ボタン" />
+      </form>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
