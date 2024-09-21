@@ -5,7 +5,7 @@ export const WithGlobalCSS = (Story: StoryFn) => {
   useEffect(() => {
     const links: HTMLLinkElement[] = [];
 
-    ["/public/grid-assets/base.css", "/public/grid-assets/reset.css"].forEach(
+    ["/public/grid-assets/reset.css", "/public/grid-assets/base.css"].forEach(
       (i) => {
         const link = document.createElement("link");
         link.rel = "stylesheet";
