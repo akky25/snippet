@@ -1,0 +1,37 @@
+.container {
+  width: 510px;
+  /* aspect-ratio: 1/1; */
+  border: rgb(36, 124, 124) dotted 5px;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.item {
+  font-size: 3rem;
+  color: rgb(202, 200, 200);
+
+  flex-grow: 1;
+  min-width: 0;
+  /* max-width: 250px; */
+
+  /* width: auto; */
+}
+
+/* .item:first-child {
+  width: auto;
+}
+
+.item:last-child {
+  width: auto;
+} */
+
+.row .item:nth-child(1) {
+  /* flex-shrink: 0; */
+}
+
+.row .item:nth-child(2) {
+  /* flex-shrink: 1; */
+}
