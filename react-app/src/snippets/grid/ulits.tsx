@@ -1,4 +1,5 @@
 import { StoryFn } from "@storybook/react";
+import clsx from "clsx";
 import { useEffect } from "react";
 
 export const WithGlobalCSS = (Story: StoryFn) => {
@@ -21,4 +22,8 @@ export const WithGlobalCSS = (Story: StoryFn) => {
   }, []);
 
   return <Story />;
+};
+
+export const createClsx = (className: string, styles: CSSModuleClasses) => {
+  return clsx(className, styles[className]);
 };
