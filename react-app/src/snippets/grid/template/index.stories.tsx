@@ -11,9 +11,9 @@ const meta: Meta<typeof XXXXX> = {
       default: "white",
     },
   },
-} as Meta<typeof XXXXX>;
+} satisfies Meta<typeof XXXXX>;
 
 export default meta;
 type Story = StoryObj<typeof XXXXX>;
 
-export const Default: Story = {};
+export const Default: Story = {} satisfies Story;
