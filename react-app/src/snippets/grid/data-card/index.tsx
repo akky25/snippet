@@ -2,12 +2,22 @@ import clsx from "clsx";
 import styles from "./index.module.css";
 import { createClsx } from "../ulits";
 
-export const DataCard = ({ type }: { type: "1" | "2" | "3" }) => {
+export const DataCard = ({
+  type,
+  className,
+}: {
+  type: "1" | "2" | "3";
+  className: string;
+}) => {
   switch (type) {
     case "1":
       return (
         <div
-          className={clsx("datacard-01 background-white", styles.dataCard01)}
+          className={clsx(
+            "datacard-01 background-white",
+            styles.dataCard01,
+            className
+          )}
         >
           <h2 className={createClsx("title", styles)}>エネルギー</h2>
           <div className={createClsx("subtitle", styles)}>Energy</div>
@@ -52,7 +62,11 @@ export const DataCard = ({ type }: { type: "1" | "2" | "3" }) => {
     case "2":
       return (
         <div
-          className={clsx("datacard-02 background-white", styles.dataCard02)}
+          className={clsx(
+            "datacard-02 background-white",
+            styles.dataCard02,
+            className
+          )}
         >
           <h2 className={createClsx("title", styles)}>サマリー</h2>
           <div className={createClsx("chart", styles)}>
@@ -89,7 +103,13 @@ export const DataCard = ({ type }: { type: "1" | "2" | "3" }) => {
 
     case "3":
       return (
-        <div className={clsx("datacard-3 background-white", styles.dataCard03)}>
+        <div
+          className={clsx(
+            "datacard-3 background-white",
+            styles.dataCard03,
+            className
+          )}
+        >
           <h2 className={createClsx("title", styles)}>ToDo</h2>
           <div className={clsx(createClsx("data", styles), "text-small")}>
             沖縄行きのチケットを手配する
