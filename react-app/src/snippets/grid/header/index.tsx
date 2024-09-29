@@ -5,14 +5,15 @@ import { FC } from "react"; // 追加
 interface HeaderProps {
   // 追加
   renderHeader?: "1" | "2" | "3"; // 追加
+  className?: string;
 }
 
-export const Header: FC<HeaderProps> = ({ renderHeader }) => {
+export const Header: FC<HeaderProps> = ({ renderHeader, className }) => {
   // 変更
   return (
     <>
       {renderHeader === "1" || renderHeader === undefined ? ( // 変更
-        <header className={styles.header}>
+        <header className={clsx(styles.header, className)}>
           <div className="logo">
             <a href="#">
               <img
@@ -115,7 +116,7 @@ export const Header: FC<HeaderProps> = ({ renderHeader }) => {
       ) : null}
 
       {renderHeader === "2" || renderHeader === undefined ? ( // 変更
-        <header className={styles.header}>
+        <header className={clsx(styles.header, className)}>
           <div className="logo">
             <a href="#">
               <img
@@ -166,7 +167,7 @@ export const Header: FC<HeaderProps> = ({ renderHeader }) => {
       ) : null}
 
       {renderHeader === "3" || renderHeader === undefined ? ( // 変更
-        <header className={styles.header}>
+        <header className={clsx(styles.header, className)}>
           <button
             aria-label="メニュー"
             className={clsx("action", styles.action)}

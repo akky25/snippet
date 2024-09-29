@@ -40,8 +40,20 @@ export const Type2_1: Story = {
   },
 } satisfies Story;
 
+export const Type2_2: Story = {
+  args: {
+    type: "2-2",
+  },
+} satisfies Story;
+
 export const Type3: Story = {
   args: {
     type: "3",
+  },
+} satisfies Story;
+
+export const Type3_2: Story = {
+  args: {
+    type: "3-2",
   },
 } satisfies Story;

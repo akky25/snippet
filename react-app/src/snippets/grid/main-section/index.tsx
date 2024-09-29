@@ -3,14 +3,21 @@ import styles from "./index.module.css";
 
 export const MainSection = ({
   type,
+  className,
+  image,
 }: {
-  type: "1" | "2" | "2-1" | "3" | "4";
+  type: "1" | "2" | "2-1" | "2-2" | "3" | "3-2" | "4";
+  className?: string;
+  image?: string;
 }) => {
   const sectionClassName = clsx([
     type === "1" && ["section-01", styles.section01],
     type === "2" && ["section-02", styles.section02],
     type === "2-1" && ["section-02-1", styles.section02_1],
+    type === "2-2" && ["section-02-2", styles.section02_2],
     type === "3" && ["section-03", styles.section03],
+    type === "3-2" && ["section-03-2", styles.section03_2],
+    className,
   ]);
 
   return (
@@ -23,7 +30,7 @@ export const MainSection = ({
         <button className={clsx("button")}>無料ではじめる</button>
         <img
           className={clsx("photo img-fill")}
-          src="/public/grid-assets/rome/1.jpg"
+          src={image ?? "/public/grid-assets/rome/1.jpg"}
           alt=""
           width="1724"
           height="2218"
