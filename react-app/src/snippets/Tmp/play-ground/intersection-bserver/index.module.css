@@ -1,0 +1,55 @@
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 300px;
+  margin-bottom: 800px;
+
+  > div {
+    background-color: rgb(43, 86, 226);
+    width: 100px;
+    aspect-ratio: 1 / 1;
+    position: relative;
+
+    &[data-intersecting="true"] {
+      background-color: red;
+    }
+
+    > svg {
+      display: none;
+    }
+
+    &[data-last-intersection="true"] {
+      svg {
+        display: block;
+        position: absolute;
+        width: 50px;
+        aspect-ratio: 1 / 1;
+        top: 50%;
+        right: -80%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+.topBlur {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 20vh;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.bottomBlur {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 60vh;
+  background-color: black;
+  opacity: 0.5;
+}
