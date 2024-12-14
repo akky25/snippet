@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ColumnGrid } from "./snippets/grid/12column-grid-2";
+// import { ColumnGrid } from "./snippets/grid/12column-grid-2";
+// import { Component } from "./snippets/Tmp";
+import { ApolloClientSandbox } from "./snippets/Tmp/ApolloClientSandbox";
 // import { ColumnGrid } from "./snippets/grid/12column-grid";
 // import { Component } from "./snippets/Tmp";
 // import { default as Component } from "./snippets/Tmp/Form";
@@ -15,11 +17,11 @@ async function enableMocking() {
     return;
   }
 
-  const { worker } = await import("./mocks/browser");
+  // const { worker } = await import("./mocks/browser");
 
   // `worker.start()` returns a Promise that resolves
   // once the Service Worker is up and ready to intercept requests.
-  return worker.start();
+  // return worker.start();
 }
 
 enableMocking().then(() => {
@@ -27,8 +29,8 @@ enableMocking().then(() => {
     <React.StrictMode>
       {/* <Form1 /> */}
       {/* <Form2 /> */}
-      {/* <Component /> */}
-      <ColumnGrid />
+      <ApolloClientSandbox />
+      {/* <ColumnGrid /> */}
     </React.StrictMode>
   );
 });

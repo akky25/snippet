@@ -1,0 +1,22 @@
+query GetUser {
+  user(id: 1) {
+    id
+    name
+    message {
+      ...MessageFragment
+    }
+  }
+}
+
+query GetMessage {
+  message {
+    ...MessageFragment
+  }
+}
+
+# message の Fragment
+fragment MessageFragment on Message {
+  id
+  text
+  timestamp
+}
