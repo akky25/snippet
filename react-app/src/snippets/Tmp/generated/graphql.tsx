@@ -24,6 +24,17 @@ export type Message = {
   timestamp?: Maybe<Scalars['String']['output']>;
 };
 
+export type Mutation = {
+  __typename?: 'Mutation';
+  updateMessage?: Maybe<Message>;
+};
+
+
+export type MutationUpdateMessageArgs = {
+  id: Scalars['ID']['input'];
+  text: Scalars['String']['input'];
+};
+
 export type Query = {
   __typename?: 'Query';
   message?: Maybe<Array<Maybe<Message>>>;
@@ -61,6 +72,14 @@ export type GetMessageQueryVariables = Exact<{ [key: string]: never; }>;
 export type GetMessageQuery = { __typename?: 'Query', message?: Array<{ __typename?: 'Message', id?: string | null, text?: string | null, timestamp?: string | null } | null> | null };
 
 export type MessageFragmentFragment = { __typename?: 'Message', id?: string | null, text?: string | null, timestamp?: string | null };
+
+export type UpdateMessageMutationVariables = Exact<{
+  id: Scalars['ID']['input'];
+  text: Scalars['String']['input'];
+}>;
+
+
+export type UpdateMessageMutation = { __typename?: 'Mutation', updateMessage?: { __typename?: 'Message', id?: string | null, text?: string | null, timestamp?: string | null } | null };
 
 export const MessageFragmentFragmentDoc = gql`
     fragment MessageFragment on Message {
@@ -151,3 +170,37 @@ export type GetMessageQueryHookResult = ReturnType<typeof useGetMessageQuery>;
 export type GetMessageLazyQueryHookResult = ReturnType<typeof useGetMessageLazyQuery>;
 export type GetMessageSuspenseQueryHookResult = ReturnType<typeof useGetMessageSuspenseQuery>;
 export type GetMessageQueryResult = Apollo.QueryResult<GetMessageQuery, GetMessageQueryVariables>;
+export const UpdateMessageDocument = gql`
+    mutation UpdateMessage($id: ID!, $text: String!) {
+  updateMessage(id: $id, text: $text) {
+    ...MessageFragment
+  }
+}
+    ${MessageFragmentFragmentDoc}`;
+export type UpdateMessageMutationFn = Apollo.MutationFunction<UpdateMessageMutation, UpdateMessageMutationVariables>;
+
+/**
+ * __useUpdateMessageMutation__
+ *
+ * To run a mutation, you first call `useUpdateMessageMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdateMessageMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updateMessageMutation, { data, loading, error }] = useUpdateMessageMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *      text: // value for 'text'
+ *   },
+ * });
+ */
+export function useUpdateMessageMutation(baseOptions?: Apollo.MutationHookOptions<UpdateMessageMutation, UpdateMessageMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<UpdateMessageMutation, UpdateMessageMutationVariables>(UpdateMessageDocument, options);
+      }
+export type UpdateMessageMutationHookResult = ReturnType<typeof useUpdateMessageMutation>;
+export type UpdateMessageMutationResult = Apollo.MutationResult<UpdateMessageMutation>;
+export type UpdateMessageMutationOptions = Apollo.BaseMutationOptions<UpdateMessageMutation, UpdateMessageMutationVariables>;

@@ -1,7 +1,10 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-import { gql } from "@apollo/client";
 import { useState } from "react";
-import { useGetMessageQuery, useGetUserQuery } from "./generated/graphql";
+import {
+  useGetMessageQuery,
+  useGetUserQuery,
+  useUpdateMessageMutation,
+} from "./generated/graphql";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql", // MSWのエンドポイントを利用
@@ -81,6 +84,26 @@ const GetUser2 = () => {
   );
 };
 
+const UpdateMessage = () => {
+  const [updateMessage] = useUpdateMessageMutation();
+  return (
+    <form
+      onSubmit={async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const text = (e.target as HTMLFormElement)
+          .elements[0] as HTMLInputElement;
+        console.log(text.value);
+        updateMessage({ variables: { id: "1", text: text.value } });
+        // text.value = "";
+        // await updateMessage({ variables: { id: 1, text: text.value } });
+      }}
+    >
+      <input type="text" />
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
 export const ApolloClientSandbox = () => {
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
@@ -97,6 +120,7 @@ export const ApolloClientSandbox = () => {
           {isOpen2 && <GetUser2 />}
         </div>
       </div>
+      <UpdateMessage />
     </ApolloProvider>
   );
 };
