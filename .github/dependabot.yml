@@ -1,0 +1,19 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  - package-ecosystem: "npm" # npm プロジェクトの指定
+    directory: "/snippet-app" # package.json の場所（ルートディレクトリの場合は "/"）
+    schedule:
+      interval: "daily" # 更新の頻度：daily, weekly, monthly から選択可能
+    commit-message:
+      prefix: "chore(deps)" # コミットメッセージのプレフィックス
+    open-pull-requests-limit: 30 # 同時に開く PR の最大数
+    allow:
+      - dependency-type: "direct" # 直接依存関係のみを更新
+    labels:
+      - "dependencies" # PR に付与するラベル
+    rebase-strategy: "auto" # 自動でリベースする
