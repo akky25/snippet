@@ -1,0 +1,2 @@
+cd snippet-app
+bunx lint-staged
