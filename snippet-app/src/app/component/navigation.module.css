@@ -1,0 +1,94 @@
+.nav {
+  width: 250px;
+  height: 100%;
+  border-right: 2px solid var(--gray-4);
+
+  @media (width < 768px) {
+    display: none;
+  }
+}
+
+.buttonContainer {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  background-color: var(--);
+}
+
+.button {
+  cursor: pointer;
+}
+
+.navigationItemsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-3);
+}
+
+.overlay {
+  background-color: var(--black-a7);
+  position: fixed;
+  inset: 0;
+  animation: overlayShow var(--animation) cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes overlayShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.overlay[data-state="closed"] {
+  animation: overlayClose 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes overlayClose {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.content {
+  background-color: var(--gray-2);
+  position: fixed;
+  top: 30%;
+  width: 100vw;
+  height: 70vh;
+  padding: var(--space-7);
+  animation: contentShow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.content[data-state="closed"] {
+  animation: contentClose 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes contentClose {
+  from {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
