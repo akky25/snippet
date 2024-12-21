@@ -1,5 +1,6 @@
 import { allContents, Content } from "contentlayer/generated";
 import { compareDesc, format, parseISO } from "date-fns";
+// import { getMDXComponent } from "next-contentlayer2/hooks";
 import Link from "next/link";
 
 export default function Home() {
@@ -18,6 +19,8 @@ export default function Home() {
 }
 
 function PostCard(post: Content) {
+  // const Content = getMDXComponent(post.body.code);
+
   return (
     <div className="mb-8">
       <h2 className="mb-1 text-xl">
@@ -26,7 +29,6 @@ function PostCard(post: Content) {
       <time dateTime={post.date}>
         {format(parseISO(post.date), "LLLL d, yyyy")}
       </time>
-      <div dangerouslySetInnerHTML={{ __html: post.body.html }} />
     </div>
   );
 }

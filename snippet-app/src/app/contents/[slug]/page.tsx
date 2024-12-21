@@ -1,5 +1,6 @@
 import { format, parseISO } from "date-fns";
 import { allContents } from "contentlayer/generated";
+import { Mdx } from "@/app/component/mdx";
 
 export const generateStaticParams = async () =>
   allContents.map((post) => ({ slug: post._raw.flattenedPath }));
@@ -30,7 +31,7 @@ const PostLayout = async (props: { params: Promise<{ slug: string }> }) => {
         </time>
         <h1>{post.title}</h1>
       </div>
-      <div dangerouslySetInnerHTML={{ __html: post.body.html }} />
+      <Mdx code={post.body.code} />
     </article>
   );
 };
