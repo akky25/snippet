@@ -3,19 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "concurrently \"next dev --turbopack\" \"contentlayer2 dev\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install snippet-app/.husky --git-dir ../.git"
+    "prepare": "husky install snippet-app/.husky --git-dir ../.git",
+    "build:content": "contentlayer2 build",
+    "dev:content": "contentlayer2 dev"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.4",
     "@radix-ui/themes": "^3.1.6",
+    "@shikijs/compat": "^1.24.3",
+    "contentlayer2": "^0.5.3",
+    "date-fns": "^4.1.0",
     "lucide-react": "^0.469.0",
     "next": "^15.1.2",
+    "next-contentlayer2": "^0.5.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "rehype-pretty-code": "^0.14.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -28,7 +35,9 @@
     "husky": "^9.1.7",
     "lint-staged": "^15.2.11",
     "prettier": "^3.4.2",
-    "typescript": "^5"
+    "typescript": "^5",
+    "unist-builder": "^4.0.0",
+    "unist-util-visit": "^5.0.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "bun lint --file"

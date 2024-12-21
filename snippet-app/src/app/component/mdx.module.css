@@ -1,0 +1,22 @@
+.pre {
+  /* マージン */
+  margin-bottom: 1rem; /* mb-4 */
+  margin-top: 1.5rem; /* mt-6 */
+
+  /* サイズとオーバーフロー */
+  max-height: 650px; /* max-h-[650px] */
+  overflow-x: auto; /* overflow-x-auto */
+
+  /* ボーダー */
+  border: 1px solid #e5e7eb; /* border (デフォルトのTailwindボーダーカラー) */
+  border-radius: 0.5rem; /* rounded-lg */
+
+  /* 背景色 */
+  background-color: #0a0e16; /* bg-neutral-950 */
+
+  /* パディング */
+  padding-top: 1rem; /* py-4 */
+  padding-bottom: 1rem; /* py-4 */
+
+  background-color: #111827; /* dark:bg-neutral-900 */
+}
