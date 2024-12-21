@@ -2,31 +2,31 @@ import { allContents } from "contentlayer/generated";
 import { Mdx } from "@/app/component/mdx";
 
 export const generateStaticParams = async () =>
-  allContents.map((post) => ({ slug: post._raw.flattenedPath }));
+  allContents.map((content) => ({ slug: content._raw.flattenedPath }));
 
 export const generateMetadata = async (props: {
   params: Promise<{ slug: string }>;
 }) => {
   const params = await props.params;
-  const post = allContents.find(
-    (post) => post._raw.flattenedPath === params.slug,
+  const content = allContents.find(
+    (content) => content._raw.flattenedPath === `${params.slug}/description`,
   );
-  if (!post) throw new Error(`Post not found for slug: ${params.slug}`);
-  return { title: post.title };
+  if (!content) throw new Error(`Post not found for slug: ${params.slug}`);
+  return { title: content.title };
 };
 
 const ContentLayout = async (props: { params: Promise<{ slug: string }> }) => {
   const params = await props.params;
 
   const description = allContents.find(
-    (post) => post._raw.flattenedPath === `${params.slug}/description`,
+    (content) => content._raw.flattenedPath === `${params.slug}/description`,
   );
 
   const tsCode = allContents.find(
-    (post) => post._raw.flattenedPath === `${params.slug}/ts-code`,
+    (content) => content._raw.flattenedPath === `${params.slug}/ts-code`,
   );
   const cssCode = allContents.find(
-    (post) => post._raw.flattenedPath === `${params.slug}/css-code`,
+    (content) => content._raw.flattenedPath === `${params.slug}/css-code`,
   );
 
   return (
