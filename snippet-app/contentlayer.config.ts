@@ -1,3 +1,4 @@
+import { rehypeComponent } from "@/app/component/rehype-component";
 import getHighlighter from "@shikijs/compat";
 import { defineDocumentType, makeSource } from "contentlayer2/source-files";
 import rehypePrettyCode, { LineElement } from "rehype-pretty-code";
@@ -23,6 +24,7 @@ export default makeSource({
   documentTypes: [Post],
   mdx: {
     rehypePlugins: [
+      rehypeComponent,
       [
         rehypePrettyCode,
         {

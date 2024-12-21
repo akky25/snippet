@@ -1,4 +1,3 @@
-import { format, parseISO } from "date-fns";
 import { allContents } from "contentlayer/generated";
 import { Mdx } from "@/app/component/mdx";
 
@@ -16,24 +15,27 @@ export const generateMetadata = async (props: {
   return { title: post.title };
 };
 
-const PostLayout = async (props: { params: Promise<{ slug: string }> }) => {
+const ContentLayout = async (props: { params: Promise<{ slug: string }> }) => {
   const params = await props.params;
-  const post = allContents.find(
-    (post) => post._raw.flattenedPath === params.slug,
+
+  const description = allContents.find(
+    (post) => post._raw.flattenedPath === `${params.slug}/description`,
   );
-  if (!post) throw new Error(`Post not found for slug: ${params.slug}`);
+
+  const tsCode = allContents.find(
+    (post) => post._raw.flattenedPath === `${params.slug}/ts-code`,
+  );
+  const cssCode = allContents.find(
+    (post) => post._raw.flattenedPath === `${params.slug}/css-code`,
+  );
 
   return (
     <article>
-      <div>
-        <time dateTime={post.date}>
-          {format(parseISO(post.date), "LLLL d, yyyy")}
-        </time>
-        <h1>{post.title}</h1>
-      </div>
-      <Mdx code={post.body.code} />
+      {description && <Mdx code={description.body.code} />}
+      {tsCode && <Mdx code={tsCode.body.code} />}
+      {cssCode && <Mdx code={cssCode.body.code} />}
     </article>
   );
 };
 
-export default PostLayout;
+export default ContentLayout;
