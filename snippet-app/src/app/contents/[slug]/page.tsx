@@ -2,7 +2,7 @@ import { allContents } from "contentlayer/generated";
 import { Mdx } from "@/app/component/mdx";
 
 export const generateStaticParams = async () =>
-  allContents.map((content) => ({ slug: content._raw.flattenedPath }));
+  allContents.map((content) => ({ slug: content._raw.sourceFileDir }));
 
 export const generateMetadata = async (props: {
   params: Promise<{ slug: string }>;
