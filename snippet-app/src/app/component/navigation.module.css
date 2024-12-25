@@ -21,13 +21,6 @@
   cursor: pointer;
 }
 
-.navigationItemsContainer {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  padding: var(--space-3);
-}
-
 .overlay {
   background-color: var(--black-a7);
   position: fixed;
