@@ -1,5 +1,8 @@
 import { allContents } from "contentlayer/generated";
 import { Mdx } from "@/app/component/mdx";
+import styles from "./page.module.css";
+import { Navigation } from "@/app/component/navigation";
+import clsx from "clsx";
 
 export const generateStaticParams = async () =>
   allContents.map((content) => ({ slug: content._raw.sourceFileDir }));
@@ -30,11 +33,20 @@ const ContentLayout = async (props: { params: Promise<{ slug: string }> }) => {
   );
 
   return (
-    <article>
-      {description && <Mdx code={description.body.code} />}
-      {tsCode && <Mdx code={tsCode.body.code} />}
-      {cssCode && <Mdx code={cssCode.body.code} />}
-    </article>
+    <div className={styles.page}>
+      <nav className={styles.nav}></nav>
+      <Navigation />
+      <main className={styles.main}>
+        <section className={clsx(styles.panel, styles.description)}>
+          {description && <Mdx code={description.body.code} />}
+        </section>
+        <section className={styles.panel}>
+          {tsCode && <Mdx code={tsCode.body.code} />}
+          {cssCode && <Mdx code={cssCode.body.code} />}
+        </section>
+        <section className={styles.panel}></section>
+      </main>
+    </div>
   );
 };
 
