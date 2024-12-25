@@ -1,5 +1,6 @@
 import { allContents } from "contentlayer/generated";
 import styles from "./navigation-items.module.css";
+import Link from "next/link";
 
 export const NavigationItems = () => {
   const contents = allContents
@@ -14,9 +15,12 @@ export const NavigationItems = () => {
   return (
     <div className={styles.navigationItemsContainer}>
       {contents.map((content) => (
-        <a key={content.title} href={`/contents/${content._raw.sourceFileDir}`}>
+        <Link
+          key={content.title}
+          href={`/contents/${content._raw.sourceFileDir}`}
+        >
           {content.title}
-        </a>
+        </Link>
       ))}
     </div>
   );
