@@ -1,8 +1,11 @@
 import { allContents } from "contentlayer/generated";
 import styles from "./navigation-items.module.css";
 import Link from "next/link";
+import { ReactNode } from "react";
 
-export const NavigationItems = () => {
+const BlankText = ({ children }: { children: ReactNode }) => <>{children}</>;
+
+export const NavigationItems = ({ Text = BlankText }) => {
   const contents = allContents
     .filter((content) => {
       return content.url.endsWith("description");
@@ -19,7 +22,7 @@ export const NavigationItems = () => {
           key={content.title}
           href={`/contents/${content._raw.sourceFileDir}`}
         >
-          {content.title}
+          <Text>{content.title}</Text>
         </Link>
       ))}
     </div>

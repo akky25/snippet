@@ -1,0 +1,23 @@
+.page {
+  display: flex;
+  height: 100svh;
+}
+
+.main {
+  flex-grow: 1;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  padding: var(--space-3);
+}
+
+.panel {
+  background-color: var(--gray-3);
+  border-radius: var(--radius-5);
+  padding: var(--space-3);
+}
+
+.description {
+  padding-top: 100px;
+}
