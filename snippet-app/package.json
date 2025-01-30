@@ -14,7 +14,7 @@
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.4",
     "@radix-ui/themes": "^3.1.6",
-    "@shikijs/compat": "^1.24.4",
+    "@shikijs/compat": "^2.2.0",
     "clsx": "^2.1.1",
     "contentlayer2": "^0.5.3",
     "date-fns": "^4.1.0",
